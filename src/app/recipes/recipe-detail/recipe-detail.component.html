@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="recipe.imagePath"
+      [alt]="recipe.name"
+      class="img-responsive img-thumbnail"
+      style="max-height: 300px">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+         appDropdown>
+      <button class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#" (click)="onAddToShoppingList()"> To Shopping List</a></li>
+        <li><a href="#"> Edit Recipe</a></li>
+        <li><a href="#"> Delete Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12"><span style="background-color: fuchsia">{{recipe.description}}:</span> <br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusantium aliquam, architecto asperiores deleniti dolorem ducimus enim facilis harum laborum minima modi nesciunt optio perferendis totam ullam veniam vero vitae.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dicta doloribus nisi possimus veniam veritatis. Ad, ducimus eligendi eum odio pariatur quod, ratione repellat repellendus reprehenderit saepe, sapiente sit soluta?
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12"><span style="background-color: fuchsia">Ingradients:</span> <br>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingradient of recipe.ingradients ">
+        {{ ingradient.name }} ({{ ingradient.amount}})
+      </li>
+    </ul>
+  </div>
+</div>
+

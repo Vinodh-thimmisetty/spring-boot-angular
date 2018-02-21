@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <label for="recipeName"> Recipe Name </label>
+    <input type="text" class="form-control" [(ngModel)]="recipeName">
+
+    <label for="recipeDescription"> Recipe Description </label>
+    <input type="text" class="form-control" #recipeDesc>
+
+    <label for="recipeImagePath"> Recipe Imagepath </label>
+    <input type="text" class="form-control" [(ngModel)]="recipeImage">
+
+    <br>
+    <button class="btn btn-primary" (click)="addNewRecipeItem(recipeDesc)">Add New Recipe</button>
+  </div>
+</div>
+

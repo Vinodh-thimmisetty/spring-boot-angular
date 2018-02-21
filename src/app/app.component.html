@@ -1,0 +1,26 @@
+<app-header (selectedFeature) = "featureSelected($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 style="text-align: center">Hello {{name}}</h3>
+       <hr>
+
+      <router-outlet></router-outlet>
+
+      <!--<app-recipes *ngIf="feature === 'recipe'"></app-recipes>-->
+      <!--<hr>-->
+      <!--<app-shopping-list *ngIf="feature === 'shopping-list'"></app-shopping-list>-->
+      <!--<hr>-->
+      <!--<app-routing-sample *ngIf="feature === 'routing-sample'"></app-routing-sample>-->
+
+
+      <!--<h3 style="text-align: center">Hello {{name}}</h3>-->
+      <!--<hr>-->
+      <!--<app-servers></app-servers>-->
+      <!--<hr>-->
+      <!--<app-warning-alert></app-warning-alert>-->
+      <!--<hr>-->
+      <!--<app-success-alert></app-success-alert>-->
+    </div>
+  </div>
+</div>

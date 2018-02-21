@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit (newIngradientItem) = "addNewIngradient($event)"></app-shopping-edit>
+    <hr>
+  <ul class="list-group">
+    <a
+      class="list-group-item"
+      style="cursor: pointer; border: 1px solid red; width: 200px"
+      *ngFor="let ingr of ingradients" appBasicHighlight>
+      {{ ingr.name }} ({{ ingr.amount}})
+    </a>
+  </ul>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer; border: 1px solid red; width: 200px"
+        *ngFor="let ingr of ingradients" appBetterHighlight
+        [defaultColor] = "'yellow'"
+        [highlightColor] = "'red'">
+        {{ ingr.name }} ({{ ingr.amount}})
+      </a>
+    </ul>
+    <hr>
+    <div [ngSwitch]="possibleValue">
+        <p *ngSwitchCase="5">Switch Value 5</p>
+        <p *ngSwitchCase="10"> Switch Value 10 </p>
+        <p *ngSwitchDefault>Swithc Value Default</p>
+    </div>
+
+  </div>
+</div>
