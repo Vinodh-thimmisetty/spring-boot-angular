@@ -29,7 +29,7 @@ export class RoutingServersComponent implements OnInit {
 
   onPageReload() {
     // Any Server Calls before Reloading the Page
-    this.router.navigate(['/routes/servers'], {relativeTo: this.activeRoute} );
+    this.router.navigate(['/routes/servers'], {relativeTo: this.activeRoute, queryParamsHandling: 'preserve'} );
   }
 
 

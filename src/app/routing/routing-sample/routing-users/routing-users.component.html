@@ -5,15 +5,16 @@
         href="#"
         class="list-group-item"
         *ngFor="let user of users"
-        [routerLink]="[5, 'edit']"
+        [routerLink]="[user.id, user.name]"
         >
         {{ user.name }}
       </a>
     </div>
   </div>
-  <!--<div class="col-xs-12 col-sm-4">
-    <app-routing-user></app-routing-user>
-  </div>-->
+  <div class="col-xs-12 col-sm-4">
+    <router-outlet></router-outlet>
+    <!--<app-routing-user></app-routing-user>-->
+  </div>
 </div>
 
 
