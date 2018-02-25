@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmitForm()">
+        <div id="user-data" formGroupName="userData">
+          <div class="form-group">
+            <label for="username">UserName</label>
+            <input type="text"
+                   id="username"
+                   class="form-control"
+                   formControlName="username"
+                   name="username">
+            <span
+            *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched"
+            class="help-block">
+              <span *ngIf="signUpForm.get('userData.username').errors['required']">Username is Required</span>
+              <span
+                *ngIf="signUpForm.get('userData.username').errors['nameIsForbidden']">Please Enter a Valid UserName</span>
+              </span>
+
+          </div>
+          <div class="form-group">
+            <button type="button"
+                    class="btn btn-warning"
+                    (click)="suggestUserName()">
+              Suggest an User Name
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text"
+                   id="email"
+                   class="form-control"
+                   formControlName="email"
+                   name="email">
+            <span
+              *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched"
+              class="help-block">Please Enter a Valid email</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Question</label>
+          <select
+            id="secret"
+            class="form-control"
+            formControlName="secretQuestion"
+            name="secret"
+            required
+          >
+            <option value="pet">Your first Pet?</option>
+            <option value="teacher">Your first teacher?</option>
+          </select>
+          <span
+            *ngIf="!signUpForm.get('secretQuestion').valid && signUpForm.get('secretQuestion').touched"
+            class="help-block">Please Enter a Valid secretQuestion</span>
+        </div>
+        <div class="form-group">
+          <textarea name="secretAnswer"
+                    cols="30"
+                    rows="10"
+                    formControlName="secretAnswer"
+          >
+          </textarea>
+          <span
+            *ngIf="!signUpForm.get('secretAnswer').valid && signUpForm.get('secretAnswer').touched"
+            class="help-block">Please Enter a Valid secretAnswer</span>
+        </div>
+        <div class="form-group">
+          <div class="radio" *ngFor="let gg of genders">
+            <label for="gender">
+            </label>
+            <input type="radio"
+                   id="gender"
+                   name="gender"
+                   formControlName="gender"
+                   [value]="gg">
+            {{ gg }}
+          </div>
+          <span
+            *ngIf="!signUpForm.get('gender').valid && signUpForm.get('gender').touched"
+            class="help-block">Please Select a gender</span>
+        </div>
+
+        <div formArrayName="hobbies">
+          <h4>Hobbies</h4>
+          <button class="btn btn-info form-group"
+                  type="button"
+                  (click)="addNewHobby()"> Add Hobby</button>
+
+          <div class="form-group"
+                *ngFor="let hby of signUpForm.get('hobbies').controls; let i = index">
+            <input type="text" class="form-control"
+                   [formControlName]="i">
+          </div>
+
+        </div>
+        <div class="form-group">
+          <button
+            class="btn btn-success"
+            type="submit">
+            Submit
+          </button>
+        </div>
+        <div class="form-group">
+          <button
+            class="btn btn-danger"
+            type="reset">
+            Reset
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+.container {
+  margin-top: 30px;
+}
+
+
+#user-data {
+  border: 1px solid green;
+}
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.error-help-msg {
+  color: red;
+}
