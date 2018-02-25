@@ -41,5 +41,8 @@ export class RecipesService implements  OnInit {
     this.shoppingListService.addMultipleIngradients(ingradients);
   }
 
+  public getRecipe(recipeId: number) {
+    return this.recipes[recipeId];
+  }
 
 }

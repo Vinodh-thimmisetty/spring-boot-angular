@@ -15,6 +15,7 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipesService) { }
 
   ngOnInit() {
+    // alert('Recipe Component');
     this.recipeService
         .recipeSelected
       .subscribe(
@@ -25,6 +26,7 @@ export class RecipesComponent implements OnInit {
   }
 
   enableRecipeDetails(recipe: Recipe) {
+    // alert('Selected Component');
     this.selectedRecipe = recipe;
   }
 
